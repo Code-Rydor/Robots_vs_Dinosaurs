@@ -5,6 +5,7 @@ class Battlefield:
     
     def __init__(self):
         self.fleet = Fleet()
+        self.herd = Herd()
 
     def run_game(self):
         pass
