@@ -7,3 +7,4 @@ class Fleet:
 
     def create_fleet(self):
         self.robots.append(Robot)
+
