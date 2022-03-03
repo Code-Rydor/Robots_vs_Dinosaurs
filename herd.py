@@ -4,6 +4,7 @@ class Herd:
     
     def __init__(self):
         self.dinosaurs = []
+        self.create_herd()
 
     def create_herd(self):
         dino1 = Dinosaur("Big Rex", 40)
@@ -12,5 +13,4 @@ class Herd:
         self.dinosaurs.append(dino2)
         dino3 = Dinosaur("Claw Dad", 40)
         self.dinosaurs.append(dino3)
-herd1 = Herd()
-herd1.create_herd()
+

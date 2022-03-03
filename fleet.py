@@ -4,6 +4,7 @@ class Fleet:
     
     def __init__(self):
         self.robots = []
+        self.create_fleet()
 
     def create_fleet(self):
         robot1 = Robot("Surge")
@@ -12,6 +13,4 @@ class Fleet:
         self.robots.append(robot2)
         robot3 = Robot("Blitz")
         self.robots.append(robot3)
-fleet1 = Fleet()
-fleet1.create_fleet()
 

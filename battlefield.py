@@ -8,13 +8,16 @@ class Battlefield:
         self.herd = Herd()
 
     def run_game(self):
+        self.display_welcome()
+        print(self.fleet.robots[0].name)
+        self.fleet.robots[0].attack(self.herd.dinosaurs[0])#coded by James... follow this example to track dot notations
         pass
 
     def display_welcome(self):
         print("Welcome to the Battledome!")
 
-    def battle(self):
-        pass
+    def battle(self):# I call battle() in run_game 
+        pass   # calls dino_turn and robot_turn methods
 
     def dino_turn(self):
         pass
