@@ -11,6 +11,7 @@ class Battlefield:
         self.display_welcome()
         print(self.fleet.robots[0].name)
         self.fleet.robots[0].attack(self.herd.dinosaurs[0])#coded by James... follow this example to track dot notations
+        self.herd.dinosaurs[0].attack(self.fleet.robots[0])
         pass
 
     def display_welcome(self):
