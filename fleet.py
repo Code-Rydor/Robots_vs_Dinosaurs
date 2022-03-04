@@ -7,10 +7,10 @@ class Fleet:
         self.create_fleet()
 
     def create_fleet(self):
-        robot1 = Robot("Surge")
+        robot1 = Robot("Aluminor")
         self.robots.append(robot1)
-        robot2 = Robot("Mr. Metal")
+        robot2 = Robot("Steely")
         self.robots.append(robot2)
-        robot3 = Robot("Blitz")
+        robot3 = Robot("Iron Eye")
         self.robots.append(robot3)
 
