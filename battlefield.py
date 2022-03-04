@@ -70,12 +70,12 @@ class Battlefield:
         print(f"Press 1 for {self.herd.dinosaurs[0].name} ({self.herd.dinosaurs[0].health} health)")
         print(f"Press 2 for {self.herd.dinosaurs[1].name} ({self.herd.dinosaurs[1].health} health)")
         print(f"Press 3 for {self.herd.dinosaurs[2].name} ({self.herd.dinosaurs[2].health} health)")
-        self.chosen_dino = input("Choose a dinosaur: ")
-        if self.chosen_dino == "1":
+        user_dino_choice = input("Choose a dinosaur: ")
+        if user_dino_choice == "1":
             self.chosen_dino = self.herd.dinosaurs[0]
-        elif self.chosen_dino == "2":
+        elif user_dino_choice == "2":
             self.chosen_dino = self.herd.dinosaurs[1]
-        elif self.chosen_dino == "3":
+        elif user_dino_choice == "3":
             self.chosen_dino = self.herd.dinosaurs[2]
         
     def show_robo_opponent_options(self):
@@ -83,12 +83,12 @@ class Battlefield:
         print(f"Press 1 for {self.fleet.robots[0].name} ({self.fleet.robots[0].health} health)")
         print(f"Press 2 for {self.fleet.robots[1].name} ({self.fleet.robots[1].health} health)")
         print(f"Press 3 for {self.fleet.robots[2].name} ({self.fleet.robots[2].health} health)")
-        self.chosen_robo = input("Choose a robot: ")
-        if self.chosen_robo == "1":
+        user_robo_choice = input("Choose a robot: ")
+        if user_robo_choice == "1":
             self.chosen_robo = self.fleet.robots[0]
-        elif self.chosen_robo == "2":
+        elif user_robo_choice == "2":
             self.chosen_robo = self.fleet.robots[1]
-        elif self.chosen_robo == "3":
+        elif user_robo_choice == "3":
             self.chosen_robo = self.fleet.robots[2]
 
     def display_winners(self):
