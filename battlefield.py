@@ -50,7 +50,7 @@ class Battlefield:
     def dino_turn(self):
         self.chosen_dino.attack(self.chosen_robo)
         if self.chosen_robo.health <= 0:
-            self.fleet.robots.pop(self.chosen_robo)
+            self.fleet.robots.remove(self.chosen_robo)
             print(f"Oh snap! {self.chosen_robo.name} is dead!")
         else:
             print(f"{self.chosen_dino.name} attacked {self.chosen_robo.name} doing {self.chosen_dino.attack_power} damage, leaving {self.chosen_robo.name} with {self.chosen_robo.health} health remaining!")
@@ -60,7 +60,7 @@ class Battlefield:
     def robo_turn(self):
         self.chosen_robo.attack(self.chosen_dino)
         if self.chosen_dino.health <= 0:
-            self.herd.dinosaurs.pop(self.chosen_dino)
+            self.herd.dinosaurs.remove(self.chosen_dino)
             print(f"Oh snap! {self.chosen_dino.name} is dead!")
         else:
             print(f"{self.chosen_robo.name} attacked {self.chosen_dino.name} doing {self.chosen_robo.weapon.attack_power} damage, leaving {self.chosen_dino.name} with {self.chosen_dino.health} health remaining!")
