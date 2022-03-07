@@ -27,7 +27,7 @@ class Battlefield:
     def run_game(self):
         self.display_welcome()
         self.battle()
-
+      
     def display_welcome(self):
         print("")
         print("Welcome to the Battledome!")
@@ -40,11 +40,21 @@ class Battlefield:
         print("")
 
     def battle(self):
-        while (self.fleet.robots != []) and (self.herd.dinosaurs != []):
+        play_game = True
+        while play_game is True:
             self.show_dino_opponent_options()
             self.show_robo_opponent_options()
             self.dino_turn()
+            if len(self.herd.dinosaurs) == 0 or len(self.fleet.robots) == 0: #for some reason, this wont run and I dont know why
+                play_game = False
+                self.display_winners()
+            self.show_robo_opponent_options()
+            self.show_dino_opponent_options()
             self.robo_turn()
+            if len(self.herd.dinosaurs) == 0 or len(self.fleet.robots) == 0: #for some reason, this wont run and I dont know why
+                play_game = False
+                self.display_winners()
+                    
     print("")
 
     def dino_turn(self):
@@ -67,9 +77,11 @@ class Battlefield:
 
     def show_dino_opponent_options(self):
         print("")
-        print(f"Press 1 for {self.herd.dinosaurs[0].name} ({self.herd.dinosaurs[0].health} health)")
-        print(f"Press 2 for {self.herd.dinosaurs[1].name} ({self.herd.dinosaurs[1].health} health)")
-        print(f"Press 3 for {self.herd.dinosaurs[2].name} ({self.herd.dinosaurs[2].health} health)")
+        count = 1
+
+        for dino in self.herd.dinosaurs:
+            print(f"Enter {count} to use {dino.name}")
+            count += 1
         user_dino_choice = input("Choose a dinosaur: ")
         if user_dino_choice == "1":
             self.chosen_dino = self.herd.dinosaurs[0]
@@ -77,12 +89,13 @@ class Battlefield:
             self.chosen_dino = self.herd.dinosaurs[1]
         elif user_dino_choice == "3":
             self.chosen_dino = self.herd.dinosaurs[2]
-        
     def show_robo_opponent_options(self):
         print("")
-        print(f"Press 1 for {self.fleet.robots[0].name} ({self.fleet.robots[0].health} health)")
-        print(f"Press 2 for {self.fleet.robots[1].name} ({self.fleet.robots[1].health} health)")
-        print(f"Press 3 for {self.fleet.robots[2].name} ({self.fleet.robots[2].health} health)")
+        count = 1
+
+        for robo in self.fleet.robots:
+            print(f"Enter {count} to use {robo.name}")
+            count +=1
         user_robo_choice = input("Choose a robot: ")
         if user_robo_choice == "1":
             self.chosen_robo = self.fleet.robots[0]
@@ -92,4 +105,10 @@ class Battlefield:
             self.chosen_robo = self.fleet.robots[2]
 
     def display_winners(self):
-        pass
+        if self.herd.dinosaurs == 0:
+            print("This fight is over!")
+            print("The winning team is Robots!")
+        elif self.fleet.robots == 0:
+            print("This fight is over!")
+            print("The winning team is Dinosaurs!")
+        
