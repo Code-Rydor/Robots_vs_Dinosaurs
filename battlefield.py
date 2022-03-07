@@ -105,10 +105,10 @@ class Battlefield:
             self.chosen_robo = self.fleet.robots[2]
 
     def display_winners(self):
-        if self.herd.dinosaurs == 0:
+        if self.herd.dinosaurs == 0: #I forgot to add len()
             print("This fight is over!")
             print("The winning team is Robots!")
-        elif self.fleet.robots == 0:
+        elif self.fleet.robots == 0: #I forgot to add len()
             print("This fight is over!")
             print("The winning team is Dinosaurs!")
         
